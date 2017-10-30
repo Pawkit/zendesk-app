@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- http://garden.zendesk.com -->
+  <link rel="stylesheet" href="https://assets.zendesk.com/apps/sdk-assets/css/1/zendesk_garden.css" type="text/css">
+  <script src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  <h2 class="u-gamma">Hello, world!</h2>
+  <div id="grab-email"></div>
+  <div id="user-name"></div>
+  <!-- https://github.com/zendesk/zendesk_app_framework_sdk -->
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+  <script>
+    var webUrl = "https://gobble.zendesk.com/api/v2/help_center/en-us/" + articles + ".json"
+    var articles = response.data
+
+    for(x=0; x<3; x++) {
+  var subject = "Test ticket #" + x;
+  var body = "This is test ticket #" + x;
+  var url = "https://gobble.zendesk.com/api/v2/help_center/en-us/articles.json"
+  
+  $.ajax({
+    url: "https://gobble.zendesk.com/api/v2/help_center/en-us/articles.json"
+    contentType:'application/json',
+    type: 'POST',
+    data: JSON.stringify({"ticket": {"subject": subject , "comment": { "body": body }}})
+  })
+  .done(function(data) {
+    console.log(data.ticket);
+  });
+}
+
+    // Initialise the Zendesk JavaScript API client
+    // https://developer.zendesk.com/apps/docs/apps-v2
+    var client = ZAFClient.init();
+    client.invoke('resize', { width: '100%', height: '200px' });
+    var userEmail = client.get('<path_to_user>.email')
+    var subject = client.get('ticket.subject')
+    var link = "https://gobble.com/admin/customers?utf8=%E2%9C%93&query=" + email + "&commit=Search"
+
+    "https://gobble.com/admin/customers?utf8=%E2%9C%93&query=neves@charter.net&commit=Search"
+
+    "https://gobble.com/admin/customers?utf8=%E2%9C%93&query=patrick.wong@gobble.com&commit=Search"
+ 
+      $("#grab-email").html(link)
+      $("#user-name").html(userEmail)
+      
+  </script>
+</body>
+</html>

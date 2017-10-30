@@ -1,0 +1,17 @@
+{
+  "name": "zengen",
+  "author": {
+    "name": "pwongcs",
+    "email": "patrick.wong@gobble.com",
+    "url": "http://www.gobble.com"
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": {
+    "support": {
+      "ticket_sidebar": "assets/iframe.html"
+    }
+  },
+  "version": "1.0",
+  "frameworkVersion": "2.0"
+}
